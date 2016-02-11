@@ -19,6 +19,9 @@ RUN echo "==> fetch all sbt jars from Maven repo..."       && \
 # Install R
 RUN apt-get clean && apt-get update && apt-get install -y r-base r-base-dev
 
+# Install necessary packages
+RUN R -e 'install.packages("rjson",repos="http://cran.us.r-project.org")'
+
 ENV R_HOME=/usr/lib/R
 
 WORKDIR /app
