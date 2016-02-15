@@ -21,7 +21,7 @@ RUN apt-get clean && apt-get update && apt-get install -y r-base r-base-dev
 
 # Install necessary packages
 RUN apt-get clean && apt-get update && apt-get install -y libgeos-dev libgdal-dev libproj-dev
-RUN R -e 'install.packages(c("rjson", "rgdal", "rgeos"), repos="http://cran.us.r-project.org")'
+RUN R -e 'install.packages(c("rjson", "rgdal", "rgeos", "ggmap"), repos="http://cran.us.r-project.org")'
 
 ENV R_HOME=/usr/lib/R
 
